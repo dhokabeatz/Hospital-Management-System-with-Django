@@ -1,0 +1,1 @@
+This is a system that will manage hospital activities and improve service quality
