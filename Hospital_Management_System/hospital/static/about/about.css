@@ -1,0 +1,17 @@
+.container{
+    margin-top: 50px;
+}
+.row{
+ /*   background: red; */
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin: 50px auto;
+
+}
+
+.column{
+    background: greenyellow;
+    padding: 10px;
+    margin: 50px;
+}
