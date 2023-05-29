@@ -1,3 +1,9 @@
+{% include 'base.html' %}
+{% include 'navigation.html'%}
+
+
+
+{% block content %}
 {% if error %}
 <p>{{error}}</p>
 {% endif %}
@@ -9,3 +15,7 @@
     <input type="password" id="password" name="password"><br>
     <input type="submit" value="Log in">
 </form>
+{%endblock content %}
+
+
+{% include 'footer.html'%}

@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+
 
 class Doctor(models.Model):
     Name = models.CharField(max_length= 25)
@@ -15,8 +15,13 @@ class Patience(models.Model):
     Address = models.TextField(max_length=50)
 
 
+
 class Appointment(models.Model):
     Doctor = models.ForeignKey(Doctor,on_delete=models.CASCADE)
     Patience = models.ForeignKey(Patience,on_delete=models.CASCADE)
     Date = models.DateField()
-    Time = models.TimeField()     
+    Time = models.TimeField()
+
+
+
+    # Create your models here.
