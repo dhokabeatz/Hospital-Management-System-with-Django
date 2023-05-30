@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate, login, logout
+from hospital.forms import CustomRegistrationForm
 
 # Create your views here.
 
@@ -31,4 +32,16 @@ def Login(request):
 def Logout(request):
     logout(request)
     return redirect('login')
+
+
+def Register(request):
+    if request.method == 'POST':
+        form = CustomRegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login') # Redirect to login page for user to login after registerting
+        else:
+            form = CustomRegistrationForm()
+        return render(request,'register.html',{'form':form})
+
 
