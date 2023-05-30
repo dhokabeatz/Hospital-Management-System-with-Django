@@ -1,13 +1,14 @@
+{% include 'base.html' %}
+{% include 'navigation.html'%}
 
-
-
-<form method="post" action="{% url 'register' %}">
+{% block content%}
+<form action="{% url 'register' %}" method="post" >
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Register</button>
 </form>
 
+{%endblock content %}
 
-
-
+{% include 'footer.html'%}
 

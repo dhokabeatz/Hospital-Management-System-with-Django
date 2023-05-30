@@ -12,8 +12,10 @@ def Home(request):
 def About(request):
     return render(request, 'about.html')
 
+
 def Contact(request):
     return render(request,'contact.html')
+
 
 def Login(request):
     if request.method == 'POST':
@@ -39,9 +41,10 @@ def Register(request):
         form = CustomRegistrationForm(request.POST)
         if form.is_valid():
             form.save()
+            #print(redirect('login'))
             return redirect('login') # Redirect to login page for user to login after registerting
-        else:
-            form = CustomRegistrationForm()
-        return render(request,'register.html',{'form':form})
+    else:
+        form = CustomRegistrationForm()
+    return render(request,'register.html',{'form':form})
 
-
+    
